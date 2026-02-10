@@ -12,6 +12,9 @@
         tools:layout="@layout/fragment_first">
 
         <action
+            android:id="@+id/action_FirstFragment_to_CatchListFragment"
+            app:destination="@id/CatchListFragment" />
+        <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
@@ -24,5 +27,23 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CatchListFragment"
+        android:name="com.example.zaliczenie_projekt_01.CatchListFragment"
+        android:label="Lista złapanych"
+        tools:layout="@layout/fragment_catch_list" >
+        <action
+            android:id="@+id/action_CatchListFragment_to_CatchDetailFragment"
+            app:destination="@id/CatchDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CatchDetailFragment"
+        android:name="com.example.zaliczenie_projekt_01.CatchDetailFragment"
+        android:label="Szczegóły złapanego"
+        tools:layout="@layout/fragment_catch_detail" >
+        <argument
+            android:name="catchId"
+            app:argType="integer" />
     </fragment>
 </navigation>
